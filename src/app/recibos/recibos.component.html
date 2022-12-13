@@ -1,0 +1,109 @@
+<div class="container" style="position: relative; height: 50em;">
+    <div class="row" style=" position: absolute; height: 6em; width: 100%;">
+        <div class="col-md-2" style="position:relative;">
+            <p style="position:relative; top:1.5em; font-size:1.5em;">Almacen</p>
+            <!-- <select class="form-select" style="position: absolute; height: 2em; top: 50%; transform: translate(0, -50%);" aria-label="Default select example">
+                <option hidden>Selecciona un almacen</option>
+                <option value="1">Almacen1</option>
+                <option value="2">Almacen2</option>
+                <option value="3">Almacen3</option>
+            </select> -->
+        </div>
+        <div class="col-md-6" style="position:relative; top: 8px;">
+            <div class="row">
+                <div class="col-md-4 link" style="padding-left: 40%; ">
+                    
+                </div>
+                <div class="col-md-4 link" style="padding-left: 55%; ">
+                    <a href="">Menú</a>
+                </div>
+                <div class="col-md-4 link" style="padding-left: 80%; ">
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <form class="d-flex" style="position: absolute; right: 0; height: 2em; top: 50%;  transform: translate(0, -50%);">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            </form>
+
+        </div>
+        <hr style="height: 3px; background-color: black; position: absolute; top: 100%;">
+    </div>
+
+    <div class="row" style=" position: absolute; height: 2em; width: 100%; top: 7em; left: 5px;">
+        <div class="col-md-10">
+
+        </div>
+        <div class="col-md-2">
+            <select class="form-select" aria-label="Default select example" placeholder="Ordenar por">
+                <option hidden>Ordenar por</option>
+                <option value="1">Mayor a menor</option>
+                <option value="2">Menor a mayor</option>
+                <option value="3">Cantidad</option>
+            </select>
+        </div>
+
+    </div>
+    <div class="row" style="position: absolute; height: 35em; width: 100%; top: 11em; overflow-y: scroll;">
+        <table class="table table-hover table-bordered text-center" style="width: 99.83%;">
+            <thead style="height: 1em;">
+              <tr class="table-primary">
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Administrar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="height: 1em;" *ngFor="let producto of productos; let i = index">
+                <th scope="row">{{producto.id}}</th>
+                <td><input class="form-control" value="{{producto.nombre}}" [disabled]="producto.noEdit" [(ngModel)]="productos[i].nombre"></td>
+                <td><input class="form-control" value="{{producto.cantidad}}" [disabled]="producto.noEdit" [(ngModel)]="productos[i].cantidad"></td>
+                <td><input class="form-control" value="{{producto.precio}}" [disabled]="producto.noEdit" [(ngModel)]="productos[i].precio"></td>
+                <td><button class="Btn Btn-success" *ngIf="producto.noEdit" (click)="addOne(producto.id)">+1</button>
+                    <button class="Btn Btn-danger" *ngIf="producto.noEdit" (click)="removeOne(producto.id)">-1</button>
+                    <button class="Btn Btn-primary" *ngIf="producto.noEdit" (click)="editProducto(i)">Editar</button>
+                    <button class="Btn Btn-primary" *ngIf="!producto.noEdit" (click)="saveProducto(i)">Guardar</button>
+                </td>
+              </tr>
+              <tr style="height: 1em;">
+                <th scope="row">{{productos.length}}</th>
+                <td>
+                    <input type="text" class="form-control" id="Nombre" placeholder="Nombre" [(ngModel)]="newNombre">
+                </td>
+                <td>
+                    <input type="text" class="form-control" id="Cantidad" placeholder="Cantidad" [(ngModel)]="newCantidad">
+                </td>
+                <td>
+                    <input type="text" class="form-control" id="Precio" placeholder="Precio" [(ngModel)]="newPrecio">
+                </td>
+                <td>
+                    <div class="row">
+                        <button class="Btn Btn-success" type="submit" style="position: relative; width: 80%; left: 1em; top: 0.5em;" (click)="createProducto()">Agregar producto</button>
+                    </div>
+                </td>
+              </tr>
+              
+              <!-- Objeto invisible que permite a la tabla ajustarse al tamaño deseado -->
+              <tr style="visibility: hidden;">
+                <th scope="row">3</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    <!-- <div class="row" style=" position: relative; height: 10em; width: 100%; top: 46.5em;">
+        <div class="col-md-11">
+
+        </div>
+        <div class="col-md-1">
+            <button class="btn btn-success mt-5 ms-5"> Guardar </button>
+        </div>
+
+    </div> -->
+</div>

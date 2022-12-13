@@ -1,0 +1,27 @@
+.n{
+    position: relative;
+}
+
+ul{
+    position: absolute;
+    left: 0;
+}
+
+a{
+    color: white;
+}
+
+nav{
+    /* background-color: #ebeef3; */
+    background-color: rgb(34, 34, 34);
+    /* background-color: #EB5717; */
+    color: white;
+    position: relative;
+
+
+}
+
+.position-offcanvas{
+    background-color: rgb(49, 49, 49);
+    top: 3.5em;
+}

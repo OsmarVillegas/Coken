@@ -1,0 +1,15 @@
+.boton {
+    display: inline-block;
+    width: 150px;
+    padding: 12px;
+    background: rgb(0, 60, 190);
+    text-decoration: none;
+    color: #ffffff;
+    border-radius: 100px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 0;
+    margin-right: 0;
+    border: #ffeb39 1px;
+}

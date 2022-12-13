@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-lg" style="position: flex;">
+
+    <div class="container" style="position: relative;">
+      <a class="navbar-brand" >C O K E N </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText" style="position: absolute; left: 90%;">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <i type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" class="fa-sharp fa-solid fa-gears fa-lg" style=""></i>
+        </ul>
+      </div>
+      <hr style="height: 3px; background-color: black; position: absolute;">
+    </div>
+
+    
+    <!-- off canvas -->
+    <div class="offcanvas offcanvas-end position-offcanvas" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+        <h5 id="offcanvasRightLabel">Offcanvas right</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <a routerLink="/recibos" style="text-decoration: none; color:white">
+          Menu
+        </a>
+        <br>
+        <br>
+        <a routerLink="/perfil" style="text-decoration: none; color:white">
+          Perfil
+        </a>
+        <br>
+        <br>
+        <a routerLink="/videos" style="text-decoration: none; color:white">
+          Información
+        </a>
+        <br>
+        <br>
+        <a routerLink="/ubicacion" style="text-decoration: none; color:white">
+          Ubicación
+        </a>
+        <br>
+        <br>
+        <a routerLink="/pagos" style="text-decoration: none; color:white">
+          Planes
+        </a>
+        <br>
+        <br>
+        <a href="" (click)="logOut()" style="text-decoration: none; color:white">
+          Salir
+        </a>
+        
+
+      </div>
+    </div>
+
+</nav>
